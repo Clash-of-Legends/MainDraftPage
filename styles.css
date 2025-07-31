@@ -1,0 +1,231 @@
+
+html, body {
+  overflow: hidden; /* zcela zakáže scrollování */
+}
+
+@font-face {
+  font-family: 'MyCustomFont';
+  src: url('946-latin-regular-4.ttf') format('truetype'); /* změň název dle tvého fontu */
+}
+
+body {
+  background-color: #ff00c8;
+  color: white;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  font-family: 'MyCustomFont', sans-serif;
+ 
+}
+
+
+    .container {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 50px;
+    }
+
+    .panel {
+      width: 200px;
+      height: 200px;
+      border: 2px solid black;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .top {
+	font-size: 17px;
+      flex: 0 0 25%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      border-bottom: 2px solid black;
+      background-color: #ff6600;
+    }
+
+.bottom {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background-size: cover;
+  background-position: center;
+  background-color: #121212;
+  border: 2px solid #ff6600; /* pevný border pro všechny */
+  transition: background-image 0.5s ease;
+}
+
+    .img-box {
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      background-size: cover;
+      background-position: center;
+      color: white;
+    }
+
+    .price {
+      font-size: 20px;
+      font-weight: bold;
+      color: white;
+    }
+
+    #top   { background-image: url('POSITION/top.png'); }
+    #jg    { background-image: url('POSITION/JG.png'); }
+    #mid   { background-image: url('POSITION/mid.png'); }
+    #adc   { background-image: url('POSITION/ADC.png'); }
+    #sup   { background-image: url('POSITION/sup.png'); }
+
+	#controls {
+	  text-align: center;
+	  margin-top: 150px;
+	  height: 120px; /* nebo podle potřeby */
+	}
+
+	#controls button {
+	  min-width: 160px; /* aby "Další" a "Přiřadit hráče" nezměnily velikost */
+	}
+
+
+    #message {
+      margin-top: 20px;
+      text-align: center;
+      font-weight: bold;
+      font-size: 18px;
+    }
+	
+#player-select {
+  max-height: 200px;
+  overflow-y: auto;
+  display: block;
+  width: 220px;
+  font-size: 16px;
+  padding: 5px;
+}
+
+#team-logo-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+}
+
+
+#bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  opacity: 0.5; /* průhlednost videa, lze upravit */
+  pointer-events: none; /* aby na něj nešlo kliknout */
+}
+
+#recap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.team-panel {
+  width: 250px;
+  background: rgba(0, 0, 0, 0.6);
+  border: 2px solid #ff6600;
+  border-radius: 8px;
+  padding: 10px;
+  text-align: center;
+  color: white;
+}
+
+.team-panel h2 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.team-role {
+  background-color: #222;
+  padding: 6px;
+  margin: 4px 0;
+  border-radius: 4px;
+}
+
+.budget {
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+  margin-top: 10px;
+  color: white;
+  text-shadow: 1px 1px black;
+}
+#scrollbox-wrapper {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  top: 720px;
+  left: 40px;
+  right: 40px;
+}
+
+.scroll-column {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+
+.scrollbox select {
+  height: 130px;   /* nebo kolik je potřeba pro zobrazení všech řádků */
+  overflow-y: auto;
+  display: block;
+}
+
+
+.scrollbox label {
+  font-weight: bold;
+  color: white;
+  margin-bottom: 5px;
+}
+
+.scrollbox select {
+  width: 150px;
+  max-height: 200px;
+  font-size: 16px;
+  padding: 4px;
+}
+
+#select-dynamic {
+  border: 2px solid red !important;
+}
+
+.budget-box {
+    display: inline-block;
+    padding: 4px 3px;
+    border: 4px solid #ff6600;
+    font-size: 24px;
+    background-color: #121212;
+    vertical-align: middle;
+}
+
+
+
+.budget-box img {
+  height: 18px;
+  vertical-align: middle;
+  margin-left: 4px;
+}
+#team-logo {
+  width: 500px;
+  height: auto;
+  transition: 0.5s ease-in-out;
+  z-index: 10;
+}

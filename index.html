@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <title>Kostkový layout - Jméno, Obrázek, Cena</title>
+  <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+
+  <div class="container">
+    <div class="panel">
+      <div class="top" id="top-name">TOP</div>
+      <div class="bottom" id="bottom-top">
+        <div id="top" class="img-box"></div>
+        <div class="price" id="top-price">---</div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="top" id="jg-name">JUNGLE</div>
+      <div class="bottom" id="bottom-jg">
+        <div id="jg" class="img-box"></div>
+        <div class="price" id="jg-price">---</div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="top" id="mid-name">MID</div>
+      <div class="bottom" id="bottom-mid">
+        <div id="mid" class="img-box"></div>
+        <div class="price" id="mid-price">---</div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="top" id="adc-name">ADC</div>
+      <div class="bottom" id="bottom-adc">
+        <div id="adc" class="img-box"></div>
+        <div class="price" id="adc-price">---</div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="top" id="sup-name">SUPPORT</div>
+      <div class="bottom" id="bottom-sup">
+        <div id="sup" class="img-box"></div>
+        <div class="price" id="sup-price">---</div>
+      </div>
+    </div>
+  </div>
+  
+
+<div class="budget" id="team-budget">
+  <span class="budget-box">
+    Budget: 1400 <img src="icons/be.webp" alt="BE">
+  </span>
+</div>
+<div id="team-logo-container">
+  <img id="team-logo" src="" alt="Logo týmu">
+</div>
+<div id="recap" style="display:none; padding: 50px;">
+</div>
+
+
+<div id="scrollbox-wrapper">
+  <div class="scroll-column left-column">
+    <div class="scrollbox">
+      <label for="select-dynamic1" id="dynamic-label1">---</label>
+      <select id="select-dynamic1" size="6" data-role=""></select>
+    </div>
+    <div class="scrollbox">
+      <label for="select-dynamic2" id="dynamic-label2">---</label>
+      <select id="select-dynamic2" size="6" data-role=""></select>
+    </div>
+  </div>
+  <div class="scroll-column right-column">
+    <div class="scrollbox">
+      <label for="select-dynamic3" id="dynamic-label3">---</label>
+      <select id="select-dynamic3" size="6" data-role=""></select>
+    </div>
+    <div class="scrollbox">
+      <label for="select-dynamic4" id="dynamic-label4">---</label>
+      <select id="select-dynamic4" size="6" data-role=""></select>
+    </div>
+  </div>
+</div>
+
+
+  <div id="controls">
+    <button onclick="assignPlayer()">Přiřadit hráče</button>
+    <div id="message"></div>
+  </div>
+
+
+<script src="teams.js"></script>
+<script src="players.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
