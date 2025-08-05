@@ -17,7 +17,6 @@ function updateSelectOptions() {
   const team = pickOrder[pickIndex];
   const availableRoles = getUnfilledNonCaptainRoles(team);
 
-  // Názvy labelů
   for (let i = 0; i < 4; i++) {
     const select = document.getElementById(`select-dynamic${i + 1}`);
     const label = document.getElementById(`dynamic-label${i + 1}`);
@@ -29,13 +28,15 @@ function updateSelectOptions() {
       select.dataset.role = role;
       label.textContent = role.toUpperCase();
 
-      // Vyplnit hráče
+      // Vyplnit hráče pouze podle role
       select.innerHTML = "";
       players.forEach((player, idx) => {
-        const option = document.createElement("option");
-        option.value = idx;
-        option.textContent = `${player.name} (${player.price} BE)`;
-        select.appendChild(option);
+        if (player.role === role) {
+          const option = document.createElement("option");
+          option.value = idx;
+          option.textContent = `${player.name} (${player.price} BE)`;
+          select.appendChild(option);
+        }
       });
     } else {
       select.style.display = "none";
@@ -45,6 +46,7 @@ function updateSelectOptions() {
     }
   }
 }
+
 
 function updateUI() {
   const team = pickOrder[pickIndex];
@@ -238,4 +240,5 @@ function showRecap() {
 initializeSnakeOrder(teams);
 updateSelectOptions();
 updateUI();
+
 updateInitialBudgetDisplay();
