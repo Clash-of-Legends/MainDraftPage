@@ -118,6 +118,13 @@ function getUnfilledNonCaptainRoles(team) {
 
 function assignPlayer() {
   if (phase === "next") {
+    // Pokud jsme na konci, spustíme recap
+    if (pickIndex >= pickOrder.length || teams.every(t => Object.values(t.players).every(p => p && p.name))) {
+      //showRecap();
+      return;
+    }
+
+    // Jinak pokračujeme ve vybírání
     phase = "assign";
     document.getElementById("message").textContent = "";
     document.querySelector("#controls button").textContent = "Přiřadit hráče";
@@ -161,6 +168,7 @@ function assignPlayer() {
     return;
   }
 
+  // Přidej hráče do týmu a odečti z budgetu
   team.players[selected.role] = { name: player.name, price: player.price, justAdded: true };
   team.budget -= player.price;
   players.splice(selected.index, 1);
@@ -169,18 +177,12 @@ function assignPlayer() {
   updateUI();
   document.getElementById("message").textContent = "";
 
-  const allTeamsFull = teams.every(t =>
-    Object.values(t.players).every(p => p && p.name)
-  );
-
   pickIndex++;
-  if (pickIndex >= pickOrder.length || allTeamsFull) {
-    showRecap();
-    return;
-  }
 
+  // Vždy nastav "Další", i když jsme na konci
   phase = "next";
-  document.querySelector("#controls button").textContent = "Další";
+  const isFinalPick = pickIndex >= pickOrder.length || teams.every(t => Object.values(t.players).every(p => p && p.name));
+  document.querySelector("#controls button").textContent = isFinalPick ? "Dokonči draft" : "Další";
 }
 
 
@@ -242,3 +244,4 @@ updateSelectOptions();
 updateUI();
 
 updateInitialBudgetDisplay();
+
