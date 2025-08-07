@@ -173,7 +173,6 @@ let players = [
   { name: "BRAMBOR", role: "sup", price: 220 },
   { name: "KACKA", role: "sup", price: 220 },
   { name: "KURE", role: "sup", price: 210 },
-  { name: "NATYNKA", role: "sup", price: 210 },
   { name: "TAVIEN", role: "sup", price: 210 },
   { name: "GENESIS", role: "sup", price: 200 },
   { name: "MAWZU", role: "sup", price: 200 },
@@ -236,4 +235,5 @@ let players = [
   { name: "SAFARI", role: "top", price: 80 },
   { name: "DRAGOS", role: "top", price: 60 },
 ];
+
 
